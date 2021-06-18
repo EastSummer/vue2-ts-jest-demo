@@ -1,0 +1,45 @@
+{
+  "defaultSeverity": "warning",
+  "linterOptions": {
+    "exclude": [
+      "node_modules/**",
+      "package.json"
+    ]
+  },
+  "rules": {
+    "no-bitwise": false,
+    "quotemark": [
+      true,
+      "single"
+    ],
+    "indent": [
+      true,
+      "spaces",
+      2
+    ],
+    "interface-name": false,
+    "ordered-imports": false,
+    "object-literal-sort-keys": false,
+    "no-consecutive-blank-lines": false,
+    "arrow-parens": false,
+    "trailing-comma": [
+      true,
+      {
+        "multiline": "always",
+        "singleline": "never"
+      }
+    ],
+    "no-console": [
+      false,
+      "log",
+      "info",
+      "error"
+    ],
+    "member-ordering": false,
+    "eofline": false,
+    "semicolon": [
+      false,
+      "always"
+    ]
+  }
+}

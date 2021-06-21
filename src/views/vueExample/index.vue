@@ -27,6 +27,16 @@
 import {
   Component, Vue, Provide, ProvideReactive,
 } from 'vue-property-decorator'
+import {
+  State,
+  Getter,
+  // Action,
+  // Mutation,
+  namespace,
+} from 'vuex-class'
+
+import { IMod1 } from '../../store/mod/interface'
+
 import Lifecycle from './p2-lifecycle/lifecycle.vue'
 import Databind from './p3-data-binding/databind.vue'
 import Computed from './p4-computed/computed.vue'
@@ -34,6 +44,9 @@ import Directive from './p5-directive/directive.vue'
 // Component
 import Define from './p6-component/define.vue'
 import Features from './p6-component/features.vue'
+// Vuex
+
+const mod1S = namespace('mod1')
 
 @Component({
   components: {
@@ -46,11 +59,29 @@ import Features from './p6-component/features.vue'
   },
 })
 export default class VueExample extends Vue {
+  @State mod1!: IMod1
+
+  @Getter fullName: any
+
+  // @Action('foo') actionFoo
+
+  @mod1S.Mutation('add') add!: any
+
   @Provide('foo') foo = 'foo'
 
   @ProvideReactive('value') value = ''
 
   private handleChangeDefine = ():void => console.log('Define click')
+
+  get a(): string {
+    return this.$store.state
+  }
+
+  created(): void {
+    console.log('111', this.mod1)
+    console.log('222', this.fullName)
+    this.add(3)
+  }
 
   // 一些参考
   // 官方文档：https://www.npmjs.com/package/vue-property-decorator#Ref

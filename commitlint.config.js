@@ -1,7 +1,7 @@
-// https://segmentfault.com/a/1190000017790694
-// https://commitlint.js.org/#/reference-rules
+// https://blog.csdn.net/userkang/article/details/98237560
+// https://github.com/luoxue-victor/commitlint
 module.exports = {
-  extends: ['@commitlint/config-conventional'],
+  extends: ['./node_modules/vue-cli-plugin-commitlint/lib/lint'],
   rules: {
     'type-enum': [
       2,
@@ -19,4 +19,4 @@ module.exports = {
       ],
     ],
   },
-};
+}

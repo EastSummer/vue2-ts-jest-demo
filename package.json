@@ -5,10 +5,12 @@
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "test:unit": "vue-cli-service test:unit",
+    "lint": "vue-cli-service lint",
     "build:prod": "vue-cli-service build --mode build",
     "build:test": "vue-cli-service build --mode test",
-    "test:unit": "vue-cli-service test:unit",
-    "lint": "vue-cli-service lint"
+    "cz": "npm run log && git add . && git cz",
+    "log": "conventional-changelog --config ./node_modules/vue-cli-plugin-commitlint/lib/log -i CHANGELOG.md -s -r 0"
   },
   "dependencies": {
     "core-js": "^3.6.5",
@@ -20,8 +22,6 @@
     "vuex-class": "^0.3.2"
   },
   "devDependencies": {
-    "@commitlint/cli": "^12.1.4",
-    "@commitlint/config-conventional": "^12.1.4",
     "@types/jest": "^24.0.19",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",
@@ -35,19 +35,32 @@
     "@vue/eslint-config-airbnb": "^5.0.2",
     "@vue/eslint-config-typescript": "^7.0.0",
     "@vue/test-utils": "^1.0.3",
+    "commitizen": "^4.0.3",
+    "commitlint": "^8.2.0",
+    "conventional-changelog-cli": "^2.0.28",
     "eslint": "^6.7.2",
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-vue": "^6.2.2",
-    "husky": "^6.0.0",
+    "husky": "^3.0.9",
     "lint-staged": "^9.5.0",
     "node-sass": "^4.12.0",
     "sass-loader": "^8.0.2",
     "typescript": "~4.1.5",
+    "vue-cli-plugin-commitlint": "~1.0.12",
     "vue-template-compiler": "^2.6.11"
   },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/vue-cli-plugin-commitlint/lib/cz"
+    }
+  },
   "gitHooks": {
-    "pre-commit": "lint-staged",
-    "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+    "pre-commit": "lint-staged"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
   },
   "lint-staged": {
     "*.{js,jsx,vue,ts,tsx}": [

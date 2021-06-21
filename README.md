@@ -20,7 +20,6 @@
 ├── tsconfig.json              // ts 编译配置项
 ├── tslint.json                // tslint 配置项 代码检测工具
 └── vue.config.js              // 配置相关
-
 ```
 
 ## Project setup

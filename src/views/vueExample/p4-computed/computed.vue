@@ -38,6 +38,7 @@ export default class Computed extends Vue {
   }
 
   @Watch('obj', { immediate: true, deep: true })
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   private getObjA(newVal: string, oldVal: string): void {
     console.log('obj.a change: ', this.obj.a)
   }

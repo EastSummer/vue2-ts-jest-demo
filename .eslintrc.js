@@ -14,7 +14,7 @@ module.exports = {
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
-    'semi': [2, 'never'],
+    semi: [2, 'never'],
     // 如果一个类方法不使用this, 使用static或者表达式
     'class-methods-use-this': 'off',
   },
@@ -29,4 +29,4 @@ module.exports = {
       },
     },
   ],
-};
+}

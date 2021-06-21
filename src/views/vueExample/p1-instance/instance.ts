@@ -20,7 +20,6 @@ app.$mount('#instance')
 // app.$options.data.text += 1
 // app.$data.text += 1
 
-
 // console.log(app.$data)
 // console.log(app.$props)
 // console.log(app.$el)

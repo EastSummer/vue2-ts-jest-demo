@@ -7,6 +7,7 @@
 import {
   Component, Vue,
 } from 'vue-property-decorator'
+import G from '@/views/vueExample/g-class/gClass'
 
 @Component
 export default class About extends Vue {
@@ -26,6 +27,9 @@ export default class About extends Vue {
       age: 12,
     }
     console.log('result: ', result)
+    const ghy = new G('耿恒玉', 25)
+    console.log('ghy: ', ghy)
+    ghy.sayHi()
   }
 }
 </script>

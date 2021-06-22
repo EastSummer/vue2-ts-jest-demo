@@ -9,6 +9,7 @@ export class Interceptors {
       timeout: 60000, // 请求超时时间
       headers: { 'X-Requested-With': 'XMLHttpRequest', 'Access-Control-Allow-Origin': '*' },
     })
+    this.setInterceptors()
   }
 
   // 拦截

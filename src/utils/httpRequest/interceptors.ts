@@ -1,6 +1,6 @@
 import axios, { AxiosInstance } from 'axios'
 
-export class Interceptors {
+export default class Interceptors {
   service: AxiosInstance
 
   constructor() {
@@ -16,23 +16,16 @@ export class Interceptors {
   setInterceptors() {
     // 请求拦截
     this.service.interceptors.request.use(
-      config => {
-        // 发起请求前处理
-
-        return config
-      },
-      error => {
+      (config) => config,
+      (error) => {
         // 请求错误处理
       },
     )
 
     // 响应拦截
     this.service.interceptors.response.use(
-      response => {
-        // 响应数据处理
-        return response
-      },
-      error => {
+      (response) => response,
+      (error) => {
         // 响应失败处理
       },
     )

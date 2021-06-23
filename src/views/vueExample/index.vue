@@ -18,6 +18,8 @@
     <input type="text" v-model="value" />
 
     <hr />
+    <h3 class="scss">scss</h3>
+    <hr />
     <router-link to="/vue/test">test</router-link>
     <router-view />
   </div>
@@ -88,3 +90,11 @@ export default class VueExample extends Vue {
   // https://www.it610.com/article/1279891986387582976.htm
 }
 </script>
+
+<style scoped lang="scss">
+@import "@/styles/index.scss";
+
+.scss {
+  @include font();
+}
+</style>

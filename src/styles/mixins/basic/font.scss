@@ -1,0 +1,8 @@
+// xxx
+@mixin font($important: null) {
+  @each $themename , $theme in $themes {
+    [data-theme="#{$themename}"] & {
+      color: map-get($map: $theme, $key: font) $important;
+    }
+  }
+}

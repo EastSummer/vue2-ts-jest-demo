@@ -18,7 +18,10 @@
     <input type="text" v-model="value" />
 
     <hr />
-    <h3 class="scss">scss</h3>
+    <h3 class="scss">
+      <span>scss</span>
+      <i class="iconfont icon-shuju" />
+    </h3>
     <hr />
     <router-link to="/vue/test">test</router-link>
     <router-view />
